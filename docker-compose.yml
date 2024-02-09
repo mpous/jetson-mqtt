@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  industrial-vision:
+    build: ./image_analyzer
+    restart: always
+    privileged: true
+    network_mode: 'host'
+    volumes:
+      - 'resin-data:/data'
+
+volumes:
+  resin-data:
